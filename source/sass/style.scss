@@ -1,0 +1,32 @@
+@import "compass";
+@import "bootstrap";
+
+// @import "compass/reset";
+
+.hoge{
+  width: 100%;
+  height: 300px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+}
+
+@media (max-width: 320px){
+  .hoge{
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px){
+  .hoge{
+    height: 100px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 320px){
+  .hoge{
+    height: 100px;
+  }
+}
+
+
