@@ -82,7 +82,7 @@ gulp.task('html',function(){
 });
 
 gulp.task('connect', connect.server({
-  port: 8080,
+  port: 8000,
   root: [process.env['PWD']],
   livereload: true
 }));
