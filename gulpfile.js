@@ -17,8 +17,7 @@ gulp.task('cssdev',function(){
         css: 'asset/css',
         sass: 'source/sass'
       }))
-      .pipe(gulp.dest('asset/css'))
-      .pipe(connect.reload());
+      .pipe(gulp.dest('asset/css'));
 });
 
 gulp.task('cssdist',function(){
@@ -39,8 +38,7 @@ gulp.task('cssdist',function(){
 gulp.task('jsdev',function(){
   gulp.src(['source/jslib/jquery-1.11.0.min.js','source/jslib/jquery.heightLine.js','source/javascript/*.js'])
     .pipe(concat('sitescript.js'))
-    .pipe(gulp.dest('asset/js'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('asset/js'));
 });
 
 gulp.task('jshint',function(){
@@ -98,9 +96,17 @@ gulp.task('watch',function(){
   });
   gulp.watch('source/img/**/*.{png,jpg,gif}',function(){
     gulp.run('imagemin');
-    gulp.src(event.path).pipe(connect.reload());
   });
   gulp.watch('**/*.html',function(event){
+    gulp.src(event.path).pipe(connect.reload());
+  });
+  gulp.watch('asset/css/*.css',function(event){
+    gulp.src(event.path).pipe(connect.reload());
+  });
+  gulp.watch('asset/js/*.js',function(event){
+    gulp.src(event.path).pipe(connect.reload());
+  });
+  gulp.watch('asset/img/**/*.{png,jpg,gif}',function(event){
     gulp.src(event.path).pipe(connect.reload());
   });
 });
