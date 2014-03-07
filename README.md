@@ -6,3 +6,6 @@
     > git clone https://github.com/maepon/wdnr-sem-sample.git
     > cd wdnr-sem-sample/
     > npm install
+
+`npm install`済みは    
+https://dl.dropboxusercontent.com/u/4304341/wdnr-sem-sample.zip
